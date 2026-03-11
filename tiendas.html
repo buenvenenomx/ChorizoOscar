@@ -1,0 +1,367 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Directorio de Tiendas | Oscar's Chorizo</title>
+  
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&display=swap" rel="stylesheet">
+  
+  <!-- Tailwind CSS via CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  
+  <!-- Tailwind Configuration -->
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            brand: {
+              red: '#be1e2d',
+              dark: '#0a0808',
+              surface: '#141110',
+              surface2: '#1f1a18',
+              gold: '#dbae58',
+              text: '#e6ded8',
+              muted: '#a39b96'
+            }
+          },
+          fontFamily: {
+            sans: ['Outfit', 'sans-serif'],
+            serif: ['Playfair Display', 'serif'],
+          }
+        }
+      }
+    }
+  </script>
+
+  <style>
+    html {
+      scroll-behavior: smooth;
+    }
+    
+    @keyframes fade-in-up {
+      0% { opacity: 0; transform: translateY(20px); }
+      100% { opacity: 1; transform: translateY(0); }
+    }
+    
+    .animate-fade-in {
+      animation: fade-in-up 1s ease-out forwards;
+    }
+    
+    .animation-delay-200 { animation-delay: 0.2s; }
+    
+    /* Gold Gradient Text */
+    .text-gold-gradient {
+      background: linear-gradient(to right, #dbae58, #f3dca6, #dbae58);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+  </style>
+</head>
+<body class="bg-brand-dark text-brand-text font-sans antialiased overflow-x-hidden selection:bg-brand-red selection:text-white">
+
+  <!-- Floating Navigation Bar -->
+  <nav class="fixed top-6 left-1/2 -translate-x-1/2 w-[90%] max-w-6xl z-50 bg-brand-surface/80 backdrop-blur-xl border border-white/5 rounded-sm shadow-2xl px-8 py-4 flex items-center justify-between transition-all duration-300 hover:border-brand-gold/20 hover:bg-brand-surface/90">
+    
+    <!-- Left Side Links -->
+    <div class="hidden md:flex flex-1 justify-start gap-10">
+      <a href="index.html#experiencia" class="text-xs uppercase tracking-[0.2em] text-brand-text hover:text-brand-gold transition-colors">La Experiencia</a>
+      <a href="index.html#puntos-venta" class="text-xs uppercase tracking-[0.2em] text-brand-text hover:text-brand-gold transition-colors">Puntos de Venta</a>
+    </div>
+
+    <!-- Center Logo -->
+    <div class="flex-shrink-0 mx-8">
+      <a href="index.html" class="group block">
+        <img src="assets/LOGO-dbae58.png" alt="Oscar's Chorizo Logo" class="h-16 md:h-20 w-auto object-contain transform group-hover:scale-105 transition-transform duration-300">
+      </a>
+    </div>
+
+    <!-- Right Side Links -->
+    <div class="hidden md:flex flex-1 justify-end gap-10 items-center">
+      <a href="index.html#distribuidores" class="text-xs uppercase tracking-[0.2em] text-brand-text hover:text-brand-gold transition-colors">Distribuidores</a>
+      <a href="index.html#contacto" class="text-xs uppercase tracking-[0.2em] hover:text-brand-red transition-colors">Contacto</a>
+    </div>
+
+    <!-- Mobile Menu Button -->
+    <button class="md:hidden flex-1 flex justify-end text-brand-text hover:text-brand-gold">
+      <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7" />
+      </svg>
+    </button>
+  </nav>
+
+  <!-- Header Section -->
+  <header class="relative w-full pt-48 pb-20 flex items-center justify-center overflow-hidden border-b border-brand-surface2 bg-brand-surface">
+    <!-- Abstract subtle shapes -->
+    <div class="absolute top-0 right-0 w-1/2 h-full bg-brand-surface2 opacity-20 skew-x-12 translate-x-32 origin-top-right mix-blend-screen pointer-events-none"></div>
+    <div class="absolute -top-20 -left-20 w-64 h-64 bg-brand-red/10 rounded-full blur-3xl pointer-events-none"></div>
+
+    <div class="relative z-10 w-full max-w-7xl mx-auto px-6 text-center">
+      <span class="inline-block uppercase tracking-[0.3em] text-brand-gold text-sm font-semibold mb-4 animate-fade-in opacity-0">Puntos de Venta Oficiales</span>
+      <h1 class="font-serif text-5xl md:text-6xl lg:text-7xl font-bold text-white leading-tight mb-6 animate-fade-in opacity-0 animation-delay-200">
+        Directorio de <span class="italic font-light text-brand-red">Tiendas</span>
+      </h1>
+      <p class="max-w-2xl mx-auto text-lg text-brand-muted opacity-90 font-light animate-fade-in opacity-0 animation-delay-200">
+        Encuentra Oscar's Chorizo en las mejores boutiques de carnes y supermercados selectos de la región.
+      </p>
+    </div>
+  </header>
+
+  <!-- Directory Section -->
+  <section class="py-24 bg-brand-dark relative z-10">
+    <div class="max-w-6xl mx-auto px-6">
+      
+      <!-- Filters (Visual only for realistic design) -->
+      <div class="flex flex-wrap items-center justify-center gap-4 mb-16">
+        <button class="px-6 py-2 border border-brand-gold text-brand-gold bg-brand-gold/5 text-sm uppercase tracking-widest hover:bg-brand-gold hover:text-brand-dark transition-colors">Todas</button>
+        <button class="px-6 py-2 border border-brand-surface2 text-brand-muted text-sm uppercase tracking-widest hover:border-brand-gold hover:text-brand-gold transition-colors">Chihuahua Centro</button>
+        <button class="px-6 py-2 border border-brand-surface2 text-brand-muted text-sm uppercase tracking-widest hover:border-brand-gold hover:text-brand-gold transition-colors">Boutiques Premium</button>
+        <button class="px-6 py-2 border border-brand-surface2 text-brand-muted text-sm uppercase tracking-widest hover:border-brand-gold hover:text-brand-gold transition-colors">Supermercados</button>
+      </div>
+
+      <!-- Stores Grid -->
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        
+        <!-- Store Card 1 -->
+        <div class="bg-brand-surface border border-white/5 rounded-sm p-8 group hover:border-brand-gold/30 hover:bg-brand-surface2 transition-all duration-300 relative overflow-hidden">
+          <div class="absolute top-0 left-0 w-1 h-0 bg-brand-red group-hover:h-full transition-all duration-500"></div>
+          <span class="text-xs tracking-widest uppercase text-brand-gold mb-2 block">Boutique de Carnes</span>
+          <h3 class="font-serif text-2xl text-white mb-4">Prime Cuts Delicias</h3>
+          <p class="text-brand-muted font-light mb-6 text-sm leading-relaxed">
+            Av. Del Charro 123, Col. Centro<br>
+            Delicias, Chih.
+          </p>
+          <div class="space-y-2 mb-8">
+            <div class="flex items-center gap-3 text-sm text-brand-text">
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 text-brand-red" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>
+              Lunes a Domingo: 8:00am - 8:00pm
+            </div>
+            <div class="flex items-center gap-3 text-sm text-brand-text">
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 text-brand-red" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" /></svg>
+              (639) 123 4567
+            </div>
+          </div>
+          <a href="#" class="inline-flex items-center gap-2 text-xs uppercase tracking-widest text-white group-hover:text-brand-gold transition-colors">
+            Ver en Mapa
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3" /></svg>
+          </a>
+        </div>
+
+        <!-- Store Card 2 -->
+        <div class="bg-brand-surface border border-white/5 rounded-sm p-8 group hover:border-brand-gold/30 hover:bg-brand-surface2 transition-all duration-300 relative overflow-hidden">
+          <div class="absolute top-0 left-0 w-1 h-0 bg-brand-red group-hover:h-full transition-all duration-500"></div>
+          <span class="text-xs tracking-widest uppercase text-brand-gold mb-2 block">Supermercado Selecto</span>
+          <h3 class="font-serif text-2xl text-white mb-4">Alsuper Plus San Felipe</h3>
+          <p class="text-brand-muted font-light mb-6 text-sm leading-relaxed">
+            Blvd. Antonio Ortiz Mena 205<br>
+            Chihuahua, Chih.
+          </p>
+          <div class="space-y-2 mb-8">
+            <div class="flex items-center gap-3 text-sm text-brand-text">
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 text-brand-red" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>
+              Lunes a Domingo: 7:00am - 11:00pm
+            </div>
+            <div class="flex items-center gap-3 text-sm text-brand-text">
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 text-brand-red" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" /></svg>
+              (614) 413 8900
+            </div>
+          </div>
+          <a href="#" class="inline-flex items-center gap-2 text-xs uppercase tracking-widest text-white group-hover:text-brand-gold transition-colors">
+            Ver en Mapa
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3" /></svg>
+          </a>
+        </div>
+
+        <!-- Store Card 3 -->
+        <div class="bg-brand-surface border border-white/5 rounded-sm p-8 group hover:border-brand-gold/30 hover:bg-brand-surface2 transition-all duration-300 relative overflow-hidden">
+          <div class="absolute top-0 left-0 w-1 h-0 bg-brand-red group-hover:h-full transition-all duration-500"></div>
+          <span class="text-xs tracking-widest uppercase text-brand-gold mb-2 block">Premium Market</span>
+          <h3 class="font-serif text-2xl text-white mb-4">Meat Boutique D1</h3>
+          <p class="text-brand-muted font-light mb-6 text-sm leading-relaxed">
+            Distrito 1, Perif. de la Juventud<br>
+            Chihuahua, Chih.
+          </p>
+          <div class="space-y-2 mb-8">
+            <div class="flex items-center gap-3 text-sm text-brand-text">
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 text-brand-red" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>
+              Lunes a Sábado: 9:00am - 9:00pm
+            </div>
+            <div class="flex items-center gap-3 text-sm text-brand-text">
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 text-brand-red" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" /></svg>
+              (614) 555 1023
+            </div>
+          </div>
+          <a href="#" class="inline-flex items-center gap-2 text-xs uppercase tracking-widest text-white group-hover:text-brand-gold transition-colors">
+            Ver en Mapa
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3" /></svg>
+          </a>
+        </div>
+
+        <!-- Store Card 4 -->
+        <div class="bg-brand-surface border border-white/5 rounded-sm p-8 group hover:border-brand-gold/30 hover:bg-brand-surface2 transition-all duration-300 relative overflow-hidden">
+          <div class="absolute top-0 left-0 w-1 h-0 bg-brand-red group-hover:h-full transition-all duration-500"></div>
+          <span class="text-xs tracking-widest uppercase text-brand-gold mb-2 block">Boutique de Carnes</span>
+          <h3 class="font-serif text-2xl text-white mb-4">Carnes Finas La Capital</h3>
+          <p class="text-brand-muted font-light mb-6 text-sm leading-relaxed">
+            Av. Francisco Villa 456<br>
+            Chihuahua, Chih.
+          </p>
+          <div class="space-y-2 mb-8">
+            <div class="flex items-center gap-3 text-sm text-brand-text">
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 text-brand-red" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>
+              Martes a Domingo: 8:00am - 8:00pm
+            </div>
+            <div class="flex items-center gap-3 text-sm text-brand-text">
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 text-brand-red" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" /></svg>
+              (614) 201 3040
+            </div>
+          </div>
+          <a href="#" class="inline-flex items-center gap-2 text-xs uppercase tracking-widest text-white group-hover:text-brand-gold transition-colors">
+            Ver en Mapa
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3" /></svg>
+          </a>
+        </div>
+
+        <!-- Store Card 5 -->
+        <div class="bg-brand-surface border border-white/5 rounded-sm p-8 group hover:border-brand-gold/30 hover:bg-brand-surface2 transition-all duration-300 relative overflow-hidden">
+          <div class="absolute top-0 left-0 w-1 h-0 bg-brand-red group-hover:h-full transition-all duration-500"></div>
+          <span class="text-xs tracking-widest uppercase text-brand-gold mb-2 block">Supermercado Selecto</span>
+          <h3 class="font-serif text-2xl text-white mb-4">Alsuper Store Cantera</h3>
+          <p class="text-brand-muted font-light mb-6 text-sm leading-relaxed">
+            Av. de la Cantera 9301<br>
+            Chihuahua, Chih.
+          </p>
+          <div class="space-y-2 mb-8">
+            <div class="flex items-center gap-3 text-sm text-brand-text">
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 text-brand-red" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>
+              Lunes a Domingo: 7:00am - 11:00pm
+            </div>
+            <div class="flex items-center gap-3 text-sm text-brand-text">
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 text-brand-red" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" /></svg>
+              (614) 432 1090
+            </div>
+          </div>
+          <a href="#" class="inline-flex items-center gap-2 text-xs uppercase tracking-widest text-white group-hover:text-brand-gold transition-colors">
+            Ver en Mapa
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3" /></svg>
+          </a>
+        </div>
+
+        <!-- Store Card 6 -->
+        <div class="bg-brand-surface border border-white/5 rounded-sm p-8 group hover:border-brand-gold/30 hover:bg-brand-surface2 transition-all duration-300 relative overflow-hidden flex flex-col items-center justify-center text-center min-h-[320px]">
+          <div class="w-16 h-16 rounded-full border border-brand-red/30 bg-brand-red/10 flex items-center justify-center mb-6 text-brand-red">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>
+          </div>
+          <h3 class="font-serif text-2xl text-white mb-2">¿Quieres ser punto de venta?</h3>
+          <p class="text-brand-muted font-light mb-6 text-sm">
+            Únete a nuestra exclusiva red de distribuidores.
+          </p>
+          <a href="https://wa.me/526393980854" target="_blank" class="px-6 py-3 bg-transparent border border-brand-red text-white hover:bg-brand-red transition-colors text-xs uppercase tracking-widest">
+            Contáctanos
+          </a>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Elegant Footer -->
+  <footer class="bg-brand-dark pt-20 pb-10 border-t border-brand-surface2 relative overflow-hidden">
+    <!-- Large BG text -->
+    <div class="absolute top-0 left-1/2 -translate-x-1/2 flex items-center justify-center pointer-events-none opacity-5 select-none w-full overflow-hidden">
+      <span class="font-serif text-[15vw] leading-none whitespace-nowrap text-white font-bold tracking-tighter">TRADICIÓN</span>
+    </div>
+
+    <div class="max-w-7xl mx-auto px-6 relative z-10">
+      <div class="grid grid-cols-1 md:grid-cols-4 gap-12 mb-16">
+        
+        <!-- Brand Brand -->
+        <div class="col-span-1 md:col-span-1">
+          <a href="index.html" class="inline-flex flex-col mb-6 group">
+            <span class="font-serif font-bold text-2xl tracking-wider text-white">OSCAR'S <span class="text-brand-red group-hover:text-brand-gold transition-colors">CHORIZO</span></span>
+            <div class="h-0.5 w-12 bg-brand-gold mt-2"></div>
+          </a>
+          <p class="text-brand-muted text-sm font-light leading-relaxed mb-6">
+            Elaborado con fervor en Chihuahua, México, llevando el lujo de lo artesanal y natural a los paladares más exigentes.
+          </p>
+        </div>
+
+        <!-- Links -->
+        <div class="col-span-1">
+          <h4 class="text-white text-sm font-semibold tracking-widest uppercase mb-6">La Marca</h4>
+          <ul class="space-y-4 text-brand-muted text-sm font-light">
+            <li><a href="index.html#experiencia" class="hover:text-brand-gold transition-colors">Nuestra Herencia</a></li>
+            <li><a href="#" class="hover:text-brand-gold transition-colors">Catálogo Premium</a></li>
+            <li><a href="index.html#experiencia" class="hover:text-brand-gold transition-colors">Compromiso de Calidad</a></li>
+            <li><a href="#" class="hover:text-brand-gold transition-colors">Prensa y Medios</a></li>
+          </ul>
+        </div>
+        
+        <!-- Shop -->
+        <div class="col-span-1">
+          <h4 class="text-white text-sm font-semibold tracking-widest uppercase mb-6">Adquisición</h4>
+          <ul class="space-y-4 text-brand-muted text-sm font-light">
+            <li><a href="tiendas.html" class="hover:text-brand-gold transition-colors text-brand-gold">Puntos de Venta</a></li>
+            <li><a href="index.html#distribuidores" class="hover:text-brand-gold transition-colors">Programa de Distribuidores</a></li>
+            <li><a href="#" class="hover:text-brand-gold transition-colors">Envíos Nacionales</a></li>
+          </ul>
+        </div>
+
+        <!-- Contact/Social -->
+        <div class="col-span-1">
+          <h4 class="text-white text-sm font-semibold tracking-widest uppercase mb-6">Conecta</h4>
+          <ul class="space-y-4 text-brand-muted text-sm font-light mb-6">
+            <li>Email: <a href="mailto:hola@oscarschorizo.com" class="text-white hover:text-brand-gold transition-colors">hola@oscarschorizo.com</a></li>
+            <li>Mayoreo: <a href="tel:+526393980854" class="text-white hover:text-brand-gold transition-colors">639 398 0854</a></li>
+          </ul>
+          <!-- Social Icons -->
+          <div class="flex gap-4">
+            <a href="#" class="w-10 h-10 border border-brand-surface2 flex items-center justify-center text-brand-muted hover:text-white hover:border-brand-gold hover:bg-brand-surface2 transition-all">
+              <!-- IG Icon -->
+              <svg fill="currentColor" viewBox="0 0 24 24" class="h-4 w-4"><path fill-rule="evenodd" d="M12.315 2c2.43 0 2.784.013 3.808.06 1.064.049 1.791.218 2.427.465a4.902 4.902 0 011.772 1.153 4.902 4.902 0 011.153 1.772c.247.636.416 1.363.465 2.427.048 1.067.06 1.407.06 4.123v.08c0 2.643-.012 2.987-.06 4.043-.049 1.064-.218 1.791-.465 2.427a4.902 4.902 0 01-1.153 1.772 4.902 4.902 0 01-1.772 1.153c-.636.247-1.363.416-2.427.465-1.067.048-1.407.06-4.123.06h-.08c-2.643 0-2.987-.012-4.043-.06-1.064-.049-1.791-.218-2.427-.465a4.902 4.902 0 01-1.772-1.153 4.902 4.902 0 01-1.153-1.772c-.247-.636-.416-1.363-.465-2.427-.047-1.024-.06-1.379-.06-3.808v-.63c0-2.43.013-2.784.06-3.808.049-1.064.218-1.791.465-2.427a4.902 4.902 0 011.153-1.772A4.902 4.902 0 015.45 2.525c.636-.247 1.363-.416 2.427-.465C8.901 2.013 9.256 2 11.685 2h.63zm-.081 1.802h-.468c-2.456 0-2.784.011-3.807.058-.975.045-1.504.207-1.857.344-.467.182-.8.398-1.15.748-.35.35-.566.683-.748 1.15-.137.353-.3.882-.344 1.857-.047 1.023-.058 1.351-.058 3.807v.468c0 2.456.011 2.784.058 3.807.045.975.207 1.504.344 1.857.182.466.399.8.748 1.15.35.35.683.566 1.15.748.353.137.882.3 1.857.344 1.054.048 1.37.058 4.041.058h.08c2.597 0 2.917-.01 3.96-.058.976-.045 1.505-.207 1.858-.344.466-.182.8-.398 1.15-.748.35-.35.566-.683.748-1.15.137-.353.3-.882.344-1.857.048-1.055.058-1.37.058-4.041v-.08c0-2.597-.01-2.917-.058-3.96-.045-.976-.207-1.505-.344-1.858a3.097 3.097 0 00-.748-1.15 3.098 3.098 0 00-1.15-.748c-.353-.137-.882-.3-1.857-.344-1.023-.047-1.351-.058-3.807-.058zM12 6.865a5.135 5.135 0 110 10.27 5.135 5.135 0 010-10.27zm0 1.802a3.333 3.333 0 100 6.666 3.333 3.333 0 000-6.666zm5.338-3.205a1.2 1.2 0 110 2.4 1.2 1.2 0 010-2.4z" clip-rule="evenodd" /></svg>
+            </a>
+            <a href="#" class="w-10 h-10 border border-brand-surface2 flex items-center justify-center text-brand-muted hover:text-white hover:border-brand-gold hover:bg-brand-surface2 transition-all">
+              <!-- FB Icon -->
+              <svg fill="currentColor" viewBox="0 0 24 24" class="h-4 w-4"><path fill-rule="evenodd" d="M22 12c0-5.523-4.477-10-10-10S2 6.477 2 12c0 4.991 3.657 9.128 8.438 9.878v-6.987h-2.54V12h2.54V9.797c0-2.506 1.492-3.89 3.777-3.89 1.094 0 2.238.195 2.238.195v2.46h-1.26c-1.243 0-1.63.771-1.63 1.562V12h2.773l-.443 2.89h-2.33v6.988C18.343 21.128 22 16.991 22 12z" clip-rule="evenodd" /></svg>
+            </a>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Copyright / Base -->
+      <div class="pt-8 border-t border-brand-surface2 flex flex-col md:flex-row items-center justify-between text-xs text-brand-muted uppercase tracking-widest font-light gap-4">
+        <p>&copy; 2024 Oscar's Chorizo. Todos los derechos reservados.</p>
+        <div class="flex gap-6">
+          <a href="#" class="hover:text-brand-gold transition-colors">Privacidad</a>
+          <a href="#" class="hover:text-brand-gold transition-colors">Términos</a>
+        </div>
+        <p class="text-[10px]">&lt;by buenveneno.mx /&gt;</p>
+      </div>
+
+    </div>
+  </footer>
+
+  <script>
+    document.addEventListener("DOMContentLoaded", function() {
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('animate-fade-in');
+            observer.unobserve(entry.target);
+          }
+        });
+      }, { threshold: 0.1 });
+      
+      document.querySelectorAll('.animate-fade-in').forEach((el) => {
+        observer.observe(el);
+      });
+    });
+  </script>
+</body>
+</html>
