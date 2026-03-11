@@ -1,0 +1,425 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Oscar's Chorizo | Premium Quality</title>
+  
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&display=swap" rel="stylesheet">
+  
+  <!-- Tailwind CSS via CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  
+  <!-- Tailwind Configuration -->
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            brand: {
+              red: '#be1e2d',
+              dark: '#0a0808',
+              surface: '#141110',
+              surface2: '#1f1a18',
+              gold: '#dbae58',
+              text: '#e6ded8',
+              muted: '#a39b96'
+            }
+          },
+          fontFamily: {
+            sans: ['Outfit', 'sans-serif'],
+            serif: ['Playfair Display', 'serif'],
+          },
+          backgroundImage: {
+            'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',
+          }
+        }
+      }
+    }
+  </script>
+
+  <style>
+    /* Custom Smooth Scrolling */
+    html {
+      scroll-behavior: smooth;
+    }
+    
+    /* Animations */
+    @keyframes fade-in-up {
+      0% { opacity: 0; transform: translateY(20px); }
+      100% { opacity: 1; transform: translateY(0); }
+    }
+    
+    .animate-fade-in {
+      animation: fade-in-up 1s ease-out forwards;
+    }
+    
+    .animation-delay-200 { animation-delay: 0.2s; }
+    .animation-delay-400 { animation-delay: 0.4s; }
+    
+    /* Gold Gradient Text */
+    .text-gold-gradient {
+      background: linear-gradient(to right, #dbae58, #f3dca6, #dbae58);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    /* Red elegant button glow */
+    .btn-red-glow:hover {
+      box-shadow: 0 0 20px rgba(190, 30, 45, 0.4);
+    }
+  </style>
+</head>
+<body class="bg-brand-dark text-brand-text font-sans antialiased overflow-x-hidden selection:bg-brand-red selection:text-white">
+
+  <!-- Floating Navigation Bar -->
+  <nav class="fixed top-6 left-1/2 -translate-x-1/2 w-[90%] max-w-6xl z-50 bg-brand-surface/80 backdrop-blur-xl border border-white/5 rounded-sm shadow-2xl px-8 py-4 flex items-center justify-between transition-all duration-300 hover:border-brand-gold/20 hover:bg-brand-surface/90">
+    
+    <!-- Left Side Links -->
+    <div class="hidden md:flex flex-1 justify-start gap-10">
+      <a href="#experiencia" class="text-xs uppercase tracking-[0.2em] text-brand-text hover:text-brand-gold transition-colors">La Experiencia</a>
+      <a href="#puntos-venta" class="text-xs uppercase tracking-[0.2em] text-brand-text hover:text-brand-gold transition-colors">Puntos de Venta</a>
+    </div>
+
+    <!-- Center Logo -->
+    <div class="flex-shrink-0 mx-8">
+      <a href="#" class="group block">
+        <img src="assets/LOGO-dbae58.png" alt="Oscar's Chorizo Logo" class="h-16 md:h-20 w-auto object-contain transform group-hover:scale-105 transition-transform duration-300">
+      </a>
+    </div>
+
+    <!-- Right Side Links -->
+    <div class="hidden md:flex flex-1 justify-end gap-10 items-center">
+      <a href="#distribuidores" class="text-xs uppercase tracking-[0.2em] text-brand-text hover:text-brand-gold transition-colors">Distribuidores</a>
+      <a href="#contacto" class="text-xs uppercase tracking-[0.2em] hover:text-brand-red transition-colors">Contacto</a>
+    </div>
+
+    <!-- Mobile Menu Button -->
+    <button class="md:hidden flex-1 flex justify-end text-brand-text hover:text-brand-gold">
+      <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7" />
+      </svg>
+    </button>
+  </nav>
+
+  <!-- Hero Section -->
+  <header class="relative w-full min-h-screen flex items-center justify-center pt-24 pb-12 overflow-hidden">
+    <!-- Background Image with Gradients for Legibility -->
+    <div class="absolute inset-0 z-0">
+      <img src="assets/premium_chorizo_hero_1773186995580.png" alt="Premium Artisanal Chorizo" class="w-full h-full object-cover object-center scale-105" />
+      <div class="absolute inset-0 bg-gradient-to-t from-brand-dark via-brand-dark/80 to-brand-dark/40"></div>
+      <div class="absolute inset-0 bg-gradient-to-r from-brand-dark/90 via-transparent to-brand-dark/90 mix-blend-multiply"></div>
+    </div>
+
+    <!-- Content -->
+    <div class="relative z-10 w-full max-w-7xl mx-auto px-6 text-center">
+      <span class="inline-block uppercase tracking-[0.3em] text-brand-gold text-sm font-semibold mb-6 animate-fade-in opacity-0">Artesanal • Norteño • Auténtico</span>
+      <h1 class="font-serif text-5xl md:text-7xl lg:text-8xl font-bold text-white leading-tight mb-8 animate-fade-in opacity-0 animation-delay-200 drop-shadow-2xl">
+        Tradición que <br /> <span class="italic font-light text-brand-red">Trasciende.</span>
+      </h1>
+      <p class="max-w-2xl mx-auto text-lg md:text-xl text-brand-text opacity-90 mb-12 font-light animate-fade-in opacity-0 animation-delay-400">
+        Descubre el inigualable sabor del auténtico chorizo premium de Chihuahua. Elaborado con los cortes de cerdo más selectos y una receta ancestral inquebrantable.
+      </p>
+      
+      <div class="flex flex-col sm:flex-row items-center justify-center gap-6 animate-fade-in opacity-0 animation-delay-400">
+        <a href="#puntos-venta" class="w-full sm:w-auto px-8 py-4 bg-transparent border border-brand-gold text-brand-gold hover:bg-brand-gold hover:text-brand-dark transition-all duration-300 text-sm uppercase tracking-widest">
+          Encuentranos
+        </a>
+        <a href="#distribuidores" class="w-full sm:w-auto px-8 py-4 bg-brand-red text-white btn-red-glow transition-all duration-300 text-sm uppercase tracking-widest border border-brand-red">
+          Ser Distribuidor
+        </a>
+      </div>
+    </div>
+    
+    <!-- Scroll indicator -->
+    <div class="absolute bottom-10 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 animate-bounce opacity-70">
+      <span class="text-xs tracking-widest uppercase text-brand-muted">Descubrir</span>
+      <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 text-brand-gold" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 14l-7 7m0 0l-7-7m7 7V3" />
+      </svg>
+    </div>
+  </header>
+
+  <!-- Brand Essence Section (La Experiencia) -->
+  <section id="experiencia" class="py-32 bg-brand-dark relative z-10 border-b border-brand-surface2">
+    <div class="max-w-7xl mx-auto px-6">
+      
+      <div class="text-center mb-20">
+        <h2 class="font-serif text-4xl md:text-5xl text-white mb-4">La Esencia de Nuestra Marca</h2>
+        <div class="h-1 w-24 bg-brand-red mx-auto"></div>
+        <p class="mt-6 text-brand-muted max-w-2xl mx-auto text-lg font-light">
+          No creamos simples embutidos; forjamos experiencias culinarias que rinden homenaje al campo y a la rica historia gastronómica del norte de México.
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-12 text-center">
+        <!-- Feature 1 -->
+        <div class="group">
+          <div class="w-20 h-20 mx-auto rounded-full border border-brand-surface2 bg-brand-surface flex items-center justify-center mb-6 transition-all duration-500 group-hover:border-brand-gold group-hover:bg-brand-surface2">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 text-brand-gold" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M5 13l4 4L19 7" />
+            </svg>
+          </div>
+          <h3 class="font-serif text-2xl text-white mb-3">100% Carne Selecta</h3>
+          <p class="text-brand-muted font-light leading-relaxed">
+            Utilizamos exclusivamente carne de cerdo de la más alta calidad, seleccionada artesanalmente para garantizar una textura y sabor perfectos.
+          </p>
+        </div>
+
+        <!-- Feature 2 -->
+        <div class="group">
+          <div class="w-20 h-20 mx-auto rounded-full border border-brand-surface2 bg-brand-surface flex items-center justify-center mb-6 transition-all duration-500 group-hover:border-brand-red group-hover:bg-brand-surface2">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 text-brand-red" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M19.428 15.428a2 2 0 00-1.022-.547l-2.387-.477a6 6 0 00-3.86.517l-.318.158a6 6 0 01-3.86.517L6.05 15.21a2 2 0 00-1.806.547M8 4h8l-1 1v5.172a2 2 0 00.586 1.414l5 5c1.26 1.26.367 3.414-1.415 3.414H4.828c-1.782 0-2.674-2.154-1.414-3.414l5-5A2 2 0 009 10.172V5L8 4z" />
+            </svg>
+          </div>
+          <h3 class="font-serif text-2xl text-white mb-3">Sin Aditivos Añadidos</h3>
+          <p class="text-brand-muted font-light leading-relaxed">
+            Nuestra promesa es la pureza. Sin conservadores, sin colorantes artificiales. Tan natural como fue concebido hace décadas.
+          </p>
+        </div>
+
+        <!-- Feature 3 -->
+        <div class="group">
+          <div class="w-20 h-20 mx-auto rounded-full border border-brand-surface2 bg-brand-surface flex items-center justify-center mb-6 transition-all duration-500 group-hover:border-brand-gold group-hover:bg-brand-surface2">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 text-brand-gold" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253" />
+            </svg>
+          </div>
+          <h3 class="font-serif text-2xl text-white mb-3">Receta Ancestral</h3>
+          <p class="text-brand-muted font-light leading-relaxed">
+            Una mezcla de chiles deshidratados y especias guardada celosamente por generaciones que brida nuestro color y sabor característico.
+          </p>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Points of Sale / Puntos de Venta Section -->
+  <section id="puntos-venta" class="py-24 bg-brand-surface relative overflow-hidden">
+    <!-- Decorative background elements -->
+    <div class="absolute top-0 right-0 w-1/2 h-full bg-brand-surface2 opacity-30 skew-x-12 translate-x-32 origin-top-right mix-blend-screen pointer-events-none"></div>
+
+    <div class="max-w-7xl mx-auto px-6 relative z-10">
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+        <!-- Image Side -->
+        <div class="relative group">
+          <div class="absolute -inset-2 bg-gradient-to-r from-brand-gold to-brand-red opacity-20 blur-xl group-hover:opacity-40 transition duration-1000"></div>
+          <div class="relative bg-brand-dark p-2 border border-white/5 rounded-sm">
+            <img src="assets/premium_butcher_shop_1773187007895.png" alt="Puntos de Venta Exclusivos" class="w-full h-[500px] object-cover grayscale-[20%] group-hover:grayscale-0 transition duration-700" />
+            <div class="absolute inset-2 border border-brand-gold/30 pointer-events-none"></div>
+          </div>
+        </div>
+        
+        <!-- Text Side -->
+        <div>
+          <span class="text-brand-gold tracking-[0.2em] text-sm uppercase font-semibold block mb-4">Experiencia de Compra</span>
+          <h2 class="font-serif text-4xl md:text-5xl text-white mb-6 leading-tight">Encuéntranos en los<br/>Mejores Establecimientos</h2>
+          <p class="text-brand-muted text-lg font-light mb-8 leading-relaxed">
+            La experiencia premium comienza desde que adquieres nuestro producto. Nos hemos asociado estratégicamente con las mejores boutiques de carnes, supermercados selectos y tiendas de especialidad gastronómica.
+          </p>
+          <p class="text-brand-text mb-10 font-light border-l-2 border-brand-red pl-4 py-2">
+            No somos para todos; somos para quienes verdaderamente exigen calidad insuperable en su mesa.
+          </p>
+          
+          <a href="#" class="inline-flex items-center gap-3 px-8 py-4 bg-brand-dark border border-brand-surface2 hover:border-brand-gold transition-colors text-white uppercase tracking-widest text-sm group">
+            Ver Directorio de Tiendas
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 text-brand-gold group-hover:translate-x-1 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3" />
+            </svg>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Distributors / B2B Section -->
+  <section id="distribuidores" class="py-32 bg-brand-dark border-t border-brand-surface2">
+    <div class="max-w-7xl mx-auto px-6">
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+        <!-- Text Side -->
+        <div class="order-2 lg:order-1">
+          <span class="text-brand-gold tracking-[0.2em] text-sm uppercase font-semibold block mb-4">Red Comercial Exclusiva</span>
+          <h2 class="font-serif text-4xl md:text-5xl text-white mb-6 leading-tight">Lleva la Excelencia<br/>a tu Negocio</h2>
+          <p class="text-brand-muted text-lg font-light mb-8 leading-relaxed">
+            Para que un negocio se distinga, debe ofrecer lo excepcional. Te invitamos a formar parte de nuestra selecta red de distribuidores mayoristas de Oscar's Chorizo.
+          </p>
+          
+          <ul class="space-y-4 mb-10">
+            <li class="flex items-start gap-4">
+              <div class="flex-shrink-0 mt-1">
+                <svg class="h-5 w-5 text-brand-red" fill="currentColor" viewBox="0 0 20 20">
+                  <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd" />
+                </svg>
+              </div>
+              <p class="text-brand-text font-light">Márgenes de utilidad diseñados para el crecimiento de tu empresa.</p>
+            </li>
+            <li class="flex items-start gap-4">
+              <div class="flex-shrink-0 mt-1">
+                <svg class="h-5 w-5 text-brand-red" fill="currentColor" viewBox="0 0 20 20">
+                  <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd" />
+                </svg>
+              </div>
+              <p class="text-brand-text font-light">Material premium de punto de venta (POP) para potenciar la marca.</p>
+            </li>
+            <li class="flex items-start gap-4">
+              <div class="flex-shrink-0 mt-1">
+                <svg class="h-5 w-5 text-brand-red" fill="currentColor" viewBox="0 0 20 20">
+                  <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd" />
+                </svg>
+              </div>
+              <p class="text-brand-text font-light">Abastecimiento garantizado y logística eficiente para grandes volúmenes.</p>
+            </li>
+          </ul>
+          
+          <a href="https://wa.me/526393980854" target="_blank" class="inline-flex items-center justify-center gap-3 px-8 py-4 bg-brand-red text-white btn-red-glow transition-all duration-300 text-sm uppercase tracking-widest border border-brand-red w-full sm:w-auto">
+            Contactar a Ventas
+            <!-- WhatsApp Icon -->
+            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="currentColor" viewBox="0 0 16 16">
+              <path d="M13.601 2.326A7.85 7.85 0 0 0 7.994 0C3.627 0 .068 3.558.064 7.926c0 1.399.366 2.76 1.057 3.965L0 16l4.204-1.102a7.9 7.9 0 0 0 3.79.965h.004c4.368 0 7.926-3.558 7.93-7.93A7.9 7.9 0 0 0 13.6 2.326zM7.994 14.521a6.6 6.6 0 0 1-3.356-.92l-.24-.144-2.494.654.666-2.433-.156-.251a6.56 6.56 0 0 1-1.007-3.505c0-3.626 2.957-6.584 6.591-6.584a6.56 6.56 0 0 1 4.66 1.931 6.56 6.56 0 0 1 1.928 4.66c-.004 3.639-2.961 6.592-6.592 6.592m3.615-4.934c-.197-.099-1.17-.578-1.353-.646-.182-.065-.315-.099-.445.099-.133.197-.513.646-.627.775-.114.133-.232.148-.43.05-.197-.1-.836-.308-1.592-.985-.59-.525-.985-1.175-1.103-1.372-.114-.198-.011-.304.088-.403.087-.088.197-.232.296-.346.1-.114.133-.198.198-.33.065-.134.034-.248-.015-.347-.05-.099-.445-1.076-.612-1.47-.16-.389-.323-.335-.445-.34-.114-.007-.247-.007-.38-.007a.73.73 0 0 0-.529.247c-.182.198-.691.677-.691 1.654s.71 1.916.81 2.049c.098.133 1.394 2.132 3.383 2.992.47.205.84.326 1.129.418.475.152.904.129 1.246.08.38-.058 1.171-.48 1.338-.943.164-.464.164-.86.114-.943-.049-.084-.182-.133-.38-.232z"/>
+            </svg>
+          </a>
+        </div>
+        
+        <!-- Image Side -->
+        <div class="order-1 lg:order-2 relative group">
+          <div class="absolute -inset-2 bg-gradient-to-l from-brand-red to-brand-gold opacity-10 blur-xl group-hover:opacity-30 transition duration-1000"></div>
+          <div class="relative overflow-hidden border border-white/5 rounded-sm">
+            <img src="assets/premium_wholesale_packages_1773187019123.png" alt="Distribución y Mayoreo" class="w-full h-[600px] object-cover hover:scale-105 transition duration-1000" />
+            
+            <!-- Floating Data Card -->
+            <div class="absolute bottom-10 -left-6 md:left-10 bg-brand-surface/90 backdrop-blur-md border border-brand-gold/30 p-6 flex items-center justify-between min-w-[300px] gap-6 shadow-2xl">
+              <div>
+                <p class="text-xs tracking-widest uppercase text-brand-gold mb-1">Volumen Disponible</p>
+                <p class="font-serif text-2xl text-white">Mayoreo Premium</p>
+              </div>
+              <div class="h-12 w-[1px] bg-brand-surface2"></div>
+              <div class="text-brand-red">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M20 7l-8-4-8 4m16 0l-8 4m8-4v10l-8 4m0-10L4 7m8 4v10M4 7v10l8 4" />
+                </svg>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- High-End Banner -->
+  <section class="py-16 bg-brand-red text-white flex flex-col items-center justify-center text-center px-6 relative overflow-hidden">
+    <!-- Abstract subtle shapes -->
+    <div class="absolute top-0 right-0 w-64 h-64 bg-white opacity-5 rounded-full blur-3xl"></div>
+    <div class="absolute bottom-0 left-0 w-64 h-64 bg-black opacity-10 rounded-full blur-3xl"></div>
+    
+    <div class="relative z-10">
+      <h2 class="font-serif text-3xl md:text-5xl font-bold mb-4 drop-shadow-[0_2px_4px_rgba(0,0,0,0.3)]">Eleva tu Estándar. Saborea la Diferencia.</h2>
+      <p class="uppercase tracking-widest text-sm opacity-80 mb-8 max-w-xl mx-auto font-medium">Haz tu pedido directo o visita nuestras boutiques autorizadas.</p>
+      <a href="#" class="bg-white text-brand-red font-bold px-10 py-4 text-sm uppercase tracking-widest hover:bg-brand-dark hover:text-white transition-colors duration-300">
+        Comprar Ahora
+      </a>
+    </div>
+  </section>
+
+  <!-- Elegant Footer -->
+  <footer class="bg-brand-dark pt-20 pb-10 border-t border-brand-surface2 relative overflow-hidden">
+    <!-- Large BG text -->
+    <div class="absolute top-0 left-1/2 -translate-x-1/2 flex items-center justify-center pointer-events-none opacity-5 select-none w-full overflow-hidden">
+      <span class="font-serif text-[15vw] leading-none whitespace-nowrap text-white font-bold tracking-tighter">TRADICIÓN</span>
+    </div>
+
+    <div class="max-w-7xl mx-auto px-6 relative z-10">
+      <div class="grid grid-cols-1 md:grid-cols-4 gap-12 mb-16">
+        
+        <!-- Brand Brand -->
+        <div class="col-span-1 md:col-span-1">
+          <a href="#" class="inline-flex flex-col mb-6 group">
+            <span class="font-serif font-bold text-2xl tracking-wider text-white">OSCAR'S <span class="text-brand-red group-hover:text-brand-gold transition-colors">CHORIZO</span></span>
+            <div class="h-0.5 w-12 bg-brand-gold mt-2"></div>
+          </a>
+          <p class="text-brand-muted text-sm font-light leading-relaxed mb-6">
+            Elaborado con fervor en Chihuahua, México, llevando el lujo de lo artesanal y natural a los paladares más exigentes.
+          </p>
+        </div>
+
+        <!-- Links -->
+        <div class="col-span-1">
+          <h4 class="text-white text-sm font-semibold tracking-widest uppercase mb-6">La Marca</h4>
+          <ul class="space-y-4 text-brand-muted text-sm font-light">
+            <li><a href="#experiencia" class="hover:text-brand-gold transition-colors">Nuestra Herencia</a></li>
+            <li><a href="#" class="hover:text-brand-gold transition-colors">Catálogo Premium</a></li>
+            <li><a href="#experiencia" class="hover:text-brand-gold transition-colors">Compromiso de Calidad</a></li>
+            <li><a href="#" class="hover:text-brand-gold transition-colors">Prensa y Medios</a></li>
+          </ul>
+        </div>
+        
+        <!-- Shop -->
+        <div class="col-span-1">
+          <h4 class="text-white text-sm font-semibold tracking-widest uppercase mb-6">Adquisición</h4>
+          <ul class="space-y-4 text-brand-muted text-sm font-light">
+            <li><a href="#puntos-venta" class="hover:text-brand-gold transition-colors">Puntos de Venta</a></li>
+            <li><a href="#distribuidores" class="hover:text-brand-gold transition-colors">Programa de Distribuidores</a></li>
+            <li><a href="#" class="hover:text-brand-gold transition-colors">Envíos Nacionales</a></li>
+          </ul>
+        </div>
+
+        <!-- Contact/Social -->
+        <div class="col-span-1">
+          <h4 class="text-white text-sm font-semibold tracking-widest uppercase mb-6">Conecta</h4>
+          <ul class="space-y-4 text-brand-muted text-sm font-light mb-6">
+            <li>Email: <a href="mailto:hola@oscarschorizo.com" class="text-white hover:text-brand-gold transition-colors">hola@oscarschorizo.com</a></li>
+            <li>Mayoreo: <a href="tel:+526393980854" class="text-white hover:text-brand-gold transition-colors">639 398 0854</a></li>
+          </ul>
+          <!-- Social Icons -->
+          <div class="flex gap-4">
+            <a href="#" class="w-10 h-10 border border-brand-surface2 flex items-center justify-center text-brand-muted hover:text-white hover:border-brand-gold hover:bg-brand-surface2 transition-all">
+              <!-- IG Icon -->
+              <svg fill="currentColor" viewBox="0 0 24 24" class="h-4 w-4"><path fill-rule="evenodd" d="M12.315 2c2.43 0 2.784.013 3.808.06 1.064.049 1.791.218 2.427.465a4.902 4.902 0 011.772 1.153 4.902 4.902 0 011.153 1.772c.247.636.416 1.363.465 2.427.048 1.067.06 1.407.06 4.123v.08c0 2.643-.012 2.987-.06 4.043-.049 1.064-.218 1.791-.465 2.427a4.902 4.902 0 01-1.153 1.772 4.902 4.902 0 01-1.772 1.153c-.636.247-1.363.416-2.427.465-1.067.048-1.407.06-4.123.06h-.08c-2.643 0-2.987-.012-4.043-.06-1.064-.049-1.791-.218-2.427-.465a4.902 4.902 0 01-1.772-1.153 4.902 4.902 0 01-1.153-1.772c-.247-.636-.416-1.363-.465-2.427-.047-1.024-.06-1.379-.06-3.808v-.63c0-2.43.013-2.784.06-3.808.049-1.064.218-1.791.465-2.427a4.902 4.902 0 011.153-1.772A4.902 4.902 0 015.45 2.525c.636-.247 1.363-.416 2.427-.465C8.901 2.013 9.256 2 11.685 2h.63zm-.081 1.802h-.468c-2.456 0-2.784.011-3.807.058-.975.045-1.504.207-1.857.344-.467.182-.8.398-1.15.748-.35.35-.566.683-.748 1.15-.137.353-.3.882-.344 1.857-.047 1.023-.058 1.351-.058 3.807v.468c0 2.456.011 2.784.058 3.807.045.975.207 1.504.344 1.857.182.466.399.8.748 1.15.35.35.683.566 1.15.748.353.137.882.3 1.857.344 1.054.048 1.37.058 4.041.058h.08c2.597 0 2.917-.01 3.96-.058.976-.045 1.505-.207 1.858-.344.466-.182.8-.398 1.15-.748.35-.35.566-.683.748-1.15.137-.353.3-.882.344-1.857.048-1.055.058-1.37.058-4.041v-.08c0-2.597-.01-2.917-.058-3.96-.045-.976-.207-1.505-.344-1.858a3.097 3.097 0 00-.748-1.15 3.098 3.098 0 00-1.15-.748c-.353-.137-.882-.3-1.857-.344-1.023-.047-1.351-.058-3.807-.058zM12 6.865a5.135 5.135 0 110 10.27 5.135 5.135 0 010-10.27zm0 1.802a3.333 3.333 0 100 6.666 3.333 3.333 0 000-6.666zm5.338-3.205a1.2 1.2 0 110 2.4 1.2 1.2 0 010-2.4z" clip-rule="evenodd" /></svg>
+            </a>
+            <a href="#" class="w-10 h-10 border border-brand-surface2 flex items-center justify-center text-brand-muted hover:text-white hover:border-brand-gold hover:bg-brand-surface2 transition-all">
+              <!-- FB Icon -->
+              <svg fill="currentColor" viewBox="0 0 24 24" class="h-4 w-4"><path fill-rule="evenodd" d="M22 12c0-5.523-4.477-10-10-10S2 6.477 2 12c0 4.991 3.657 9.128 8.438 9.878v-6.987h-2.54V12h2.54V9.797c0-2.506 1.492-3.89 3.777-3.89 1.094 0 2.238.195 2.238.195v2.46h-1.26c-1.243 0-1.63.771-1.63 1.562V12h2.773l-.443 2.89h-2.33v6.988C18.343 21.128 22 16.991 22 12z" clip-rule="evenodd" /></svg>
+            </a>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Copyright / Base -->
+      <div class="pt-8 border-t border-brand-surface2 flex flex-col md:flex-row items-center justify-between text-xs text-brand-muted uppercase tracking-widest font-light gap-4">
+        <p>&copy; 2024 Oscar's Chorizo. Todos los derechos reservados.</p>
+        <div class="flex gap-6">
+          <a href="#" class="hover:text-brand-gold transition-colors">Privacidad</a>
+          <a href="#" class="hover:text-brand-gold transition-colors">Términos</a>
+        </div>
+        <p class="text-[10px]">&lt;by buenveneno.mx /&gt;</p>
+      </div>
+
+    </div>
+  </footer>
+
+  <!-- Simple Intersection Observer for scroll animations -->
+  <script>
+    document.addEventListener("DOMContentLoaded", function() {
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('animate-fade-in');
+            observer.unobserve(entry.target);
+          }
+        });
+      }, {
+        threshold: 0.1
+      });
+
+      // Target elements specifically if not already in viewport on load, though we hardcoded fade-in classes
+      // We can remove opacity-0 via observer for a smoother reveal.
+    });
+  </script>
+</body>
+</html>
