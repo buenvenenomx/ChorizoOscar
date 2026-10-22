@@ -159,7 +159,7 @@ em { font-style: normal; color: var(--accent-text); }
 .nav__toggle[aria-expanded="true"] .barras { display: none; }
 .nav__toggle[aria-expanded="true"] .x { display: block; }
 
-@media (max-width: 62rem) {
+@media (max-width: 68rem) {
   .nav__toggle { display: inline-flex; }
   .nav__links {
     position: absolute; left: 0; right: 0; top: 100%;
