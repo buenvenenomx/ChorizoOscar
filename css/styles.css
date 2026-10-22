@@ -1,13 +1,13 @@
 /* ==========================================================================
    Oscar's Chorizo — sistema visual
-   Colores tomados del empaque real: etiqueta azul-negro pizarra, sello oro,
+   Colores tomados del empaque real: etiqueta vino oscuro, sello oro,
    chorizo naranja y cazuela de barro. Base oscura; bloques claros con .claro.
    ========================================================================== */
 
 :root {
   /* Marca (fijos) */
-  --pizarra: #20252e;
-  --pizarra-2: #2b323e;
+  --vino-profundo: #261517;
+  --vino: #45272b;
   --oro: #d9a763;
   --oro-claro: #e8bd82;
   --naranja: #cf6a14;
@@ -17,19 +17,19 @@
   --crema-suave: #cbbfa9;
   --rojo: #be1e2d;
 
-  /* Semánticos (tema Pizarra, por defecto) */
-  --surface: var(--pizarra);
-  --surface-alt: var(--pizarra-2);
-  --surface-raised: var(--pizarra-2);
+  /* Semánticos (tema Vino, por defecto) */
+  --surface: var(--vino-profundo);
+  --surface-alt: var(--vino);
+  --surface-raised: var(--vino);
   --ink: var(--crema);
   --ink-soft: var(--crema-suave);
   --accent: var(--oro);
   --accent-text: var(--oro);
   --warm-text: var(--naranja-txt);
   --line: var(--oro);
-  --line-soft: #3d4655;
+  --line-soft: #5b3b40;
   --btn-bg: var(--oro);
-  --btn-fg: var(--pizarra);
+  --btn-fg: var(--vino-profundo);
   --btn-hover: var(--oro-claro);
   --sombra: 5px 5px 0 var(--naranja);
   --sombra-sm: 3px 3px 0 var(--naranja);
@@ -47,22 +47,22 @@
   --surface: var(--crema);
   --surface-alt: #ead9bb;
   --surface-raised: #fbf3e3;
-  --ink: var(--pizarra);
-  --ink-soft: #4a4f57;
-  --accent: var(--pizarra);
+  --ink: var(--vino-profundo);
+  --ink-soft: #5e4649;
+  --accent: var(--vino-profundo);
   --accent-text: #9b4a07;
   --warm-text: #9b4a07;
-  --line: var(--pizarra);
+  --line: var(--vino-profundo);
   --line-soft: #cdb88f;
-  --btn-bg: var(--pizarra);
+  --btn-bg: var(--vino-profundo);
   --btn-fg: var(--crema);
-  --btn-hover: #323a47;
+  --btn-hover: #5a393e;
   background: var(--surface);
   color: var(--ink);
 }
 
 *, *::before, *::after { box-sizing: border-box; }
-html { scroll-behavior: smooth; scroll-padding-top: 5.5rem; -webkit-text-size-adjust: 100%; background: var(--pizarra); }
+html { scroll-behavior: smooth; scroll-padding-top: 5.5rem; -webkit-text-size-adjust: 100%; background: var(--vino-profundo); }
 body {
   margin: 0;
   background: var(--surface);
@@ -81,12 +81,12 @@ body::before {
 }
 img { max-width: 100%; height: auto; display: block; }
 a { color: inherit; }
-::selection { background: var(--oro); color: var(--pizarra); }
+::selection { background: var(--oro); color: var(--vino-profundo); }
 :focus-visible { outline: 3px solid var(--accent-text); outline-offset: 3px; }
 
 .saltar {
   position: absolute; left: 1rem; top: -4rem; z-index: 200;
-  background: var(--oro); color: var(--pizarra); padding: .6rem 1rem; text-decoration: none;
+  background: var(--oro); color: var(--vino-profundo); padding: .6rem 1rem; text-decoration: none;
 }
 .saltar:focus { top: 1rem; }
 
@@ -106,11 +106,11 @@ em { font-style: normal; color: var(--accent-text); }
 }
 /* Listón: eco de la cinta del logo */
 .liston {
-  display: inline-block; background: var(--oro); color: var(--pizarra);
+  display: inline-block; background: var(--oro); color: var(--vino-profundo);
   padding: .32rem 1.7rem; margin-bottom: 1.2rem;
   clip-path: polygon(0 0, 100% 0, calc(100% - .8rem) 50%, 100% 100%, 0 100%, .8rem 50%);
 }
-.claro .liston { background: var(--pizarra); color: var(--oro); }
+.claro .liston { background: var(--vino-profundo); color: var(--oro); }
 .estrella { color: var(--oro); }
 .claro .estrella { color: #9b4a07; }
 .lead { font-size: clamp(1.15rem, 2vw, 1.35rem); line-height: 1.5; color: var(--ink-soft); max-width: 34rem; }
@@ -133,7 +133,7 @@ em { font-style: normal; color: var(--accent-text); }
 /* ---------- Navegación ---------- */
 .nav {
   position: sticky; top: 0; z-index: 50;
-  background: color-mix(in srgb, var(--pizarra) 94%, transparent);
+  background: color-mix(in srgb, var(--vino-profundo) 94%, transparent);
   backdrop-filter: blur(8px);
   border-bottom: 2px solid var(--oro);
 }
@@ -163,7 +163,7 @@ em { font-style: normal; color: var(--accent-text); }
   .nav__links {
     position: absolute; left: 0; right: 0; top: 100%;
     flex-direction: column; align-items: stretch; gap: 0;
-    background: var(--pizarra); border-bottom: 2px solid var(--oro);
+    background: var(--vino-profundo); border-bottom: 2px solid var(--oro);
     padding: .5rem var(--gutter) 1.5rem; display: none;
   }
   .nav__links.abierto { display: flex; }
@@ -186,12 +186,12 @@ em { font-style: normal; color: var(--accent-text); }
 .hero__foto { position: relative; max-width: 28rem; margin-inline: auto; width: 100%; }
 .arco {
   border: 3px solid var(--oro); border-radius: 999px 999px 6px 6px; overflow: hidden;
-  aspect-ratio: 4 / 5; background: var(--pizarra-2); box-shadow: 10px 10px 0 var(--naranja);
+  aspect-ratio: 4 / 5; background: var(--vino); box-shadow: 10px 10px 0 var(--naranja);
 }
 .arco img { width: 100%; height: 100%; object-fit: cover; }
 .sello {
   position: absolute; left: -2.2rem; bottom: 2.2rem; width: 9.5rem; height: 9.5rem;
-  border-radius: 50%; background: var(--pizarra); border: 3px solid var(--oro);
+  border-radius: 50%; background: var(--vino-profundo); border: 3px solid var(--oro);
   display: grid; place-items: center; transform: rotate(-9deg); box-shadow: var(--sombra);
 }
 .sello img { width: 8.4rem; height: 8.4rem; }
@@ -206,12 +206,12 @@ em { font-style: normal; color: var(--accent-text); }
 /* ---------- Cinta ---------- */
 .cinta-caja { overflow: hidden; padding-block: .75rem; }
 .cinta {
-  background: var(--naranja); color: var(--pizarra); overflow: hidden; white-space: nowrap;
+  background: var(--naranja); color: var(--vino-profundo); overflow: hidden; white-space: nowrap;
   border-block: 3px solid var(--oro); transform: rotate(-.8deg); margin-inline: -1rem;
 }
 .cinta__pista { display: inline-flex; animation: cinta 38s linear infinite; }
 .cinta__pista span { font-family: var(--f-display); font-size: clamp(1.15rem, 2.2vw, 1.55rem); padding: .85rem 1.1rem; }
-.cinta__pista .estrella { color: var(--pizarra); padding-inline: 0; }
+.cinta__pista .estrella { color: var(--vino-profundo); padding-inline: 0; }
 @keyframes cinta { to { transform: translateX(-50%); } }
 
 /* ---------- Secciones ---------- */
@@ -236,7 +236,7 @@ em { font-style: normal; color: var(--accent-text); }
   position: relative; background: var(--surface-alt); border: 3px solid var(--line); border-radius: 4px;
   box-shadow: var(--sombra); display: flex; flex-direction: column; overflow: hidden;
 }
-.etiqueta-prod__foto { aspect-ratio: 4 / 3; width: 100%; object-fit: cover; border-bottom: 3px solid var(--line); background: var(--pizarra); }
+.etiqueta-prod__foto { aspect-ratio: 4 / 3; width: 100%; object-fit: cover; border-bottom: 3px solid var(--line); background: var(--vino-profundo); }
 .etiqueta-prod__cuerpo { position: relative; padding: 1.5rem 1.6rem 1.6rem; display: flex; flex-direction: column; gap: .7rem; flex: 1; }
 .etiqueta-prod__cuerpo::before { content: ""; position: absolute; inset: 6px; border: 1.5px dashed var(--line-soft); border-radius: 2px; pointer-events: none; }
 .etiqueta-prod__peso { color: var(--warm-text); }
@@ -244,7 +244,7 @@ em { font-style: normal; color: var(--accent-text); }
 .etiqueta-prod__pedir { margin-top: auto; padding-top: 1rem; border-top: 2px solid var(--line); }
 .etiqueta-prod__pedir .btn { padding: .6rem 1.1rem; font-size: .92rem; box-shadow: var(--sombra-sm); }
 .marca-ejemplo {
-  position: absolute; top: .6rem; right: .6rem; background: var(--oro); color: var(--pizarra); padding: .15rem .7rem;
+  position: absolute; top: .6rem; right: .6rem; background: var(--oro); color: var(--vino-profundo); padding: .15rem .7rem;
   font-family: var(--f-etiqueta); font-weight: 700; letter-spacing: .14em; text-transform: uppercase; font-size: .8rem; z-index: 2;
 }
 
@@ -261,7 +261,7 @@ em { font-style: normal; color: var(--accent-text); }
 .fachada strong { font-family: var(--f-display); font-weight: 400; font-size: 1.15rem; line-height: 1.2; }
 .fachada span { color: var(--ink-soft); font-family: var(--f-etiqueta); letter-spacing: .12em; text-transform: uppercase; font-size: .9rem; }
 
-.foto-marco { border: 3px solid var(--oro); box-shadow: 10px 10px 0 var(--naranja); border-radius: 4px; overflow: hidden; background: var(--pizarra); }
+.foto-marco { border: 3px solid var(--oro); box-shadow: 10px 10px 0 var(--naranja); border-radius: 4px; overflow: hidden; background: var(--vino-profundo); }
 .foto-marco img { width: 100%; aspect-ratio: 5 / 4; object-fit: cover; }
 .beneficios { list-style: none; margin: 0 0 2.2rem; padding: 0; display: grid; gap: 1rem; }
 .beneficios li { display: grid; grid-template-columns: 1.6rem 1fr; gap: .8rem; }
@@ -284,12 +284,12 @@ em { font-style: normal; color: var(--accent-text); }
   padding: .45rem 1rem; border: 2px solid var(--crema-suave); border-radius: 999px; background: transparent; color: var(--ink); cursor: pointer;
 }
 .chip:hover { background: var(--surface-alt); border-color: var(--oro); }
-.chip[aria-pressed="true"] { background: var(--oro); color: var(--pizarra); border-color: var(--oro); }
+.chip[aria-pressed="true"] { background: var(--oro); color: var(--vino-profundo); border-color: var(--oro); }
 
 .tiendas { display: grid; grid-template-columns: repeat(auto-fill, minmax(18.5rem, 1fr)); gap: 1.75rem; }
 .tienda { position: relative; background: var(--surface-alt); border: 3px solid var(--line); border-radius: 4px; box-shadow: var(--sombra); display: flex; flex-direction: column; overflow: hidden; }
 .tienda__foto { width: 100%; aspect-ratio: 4 / 3; object-fit: cover; border-bottom: 3px solid var(--line); }
-.tienda__sin-foto { aspect-ratio: 4 / 3; display: grid; place-items: center; background: var(--pizarra); border-bottom: 3px solid var(--line); }
+.tienda__sin-foto { aspect-ratio: 4 / 3; display: grid; place-items: center; background: var(--vino-profundo); border-bottom: 3px solid var(--line); }
 .tienda__sin-foto img { width: 38%; height: auto; opacity: .85; }
 .tienda__cuerpo { padding: 1.5rem 1.6rem 1.6rem; display: flex; flex-direction: column; gap: .75rem; flex: 1; }
 .tienda__tipo { color: var(--warm-text); }
@@ -298,15 +298,15 @@ em { font-style: normal; color: var(--accent-text); }
 .tienda__datos svg { width: 1.1rem; height: 1.1rem; margin-top: .25rem; color: var(--oro); }
 .tienda__datos a { color: var(--ink); text-underline-offset: 3px; }
 .tienda .btn { margin-top: auto; align-self: flex-start; padding: .6rem 1.1rem; font-size: .92rem; box-shadow: var(--sombra-sm); }
-.tienda--cta { background: var(--oro); color: var(--pizarra); justify-content: center; text-align: center; align-items: center; padding: 1.6rem; gap: .75rem; border-color: var(--oro); }
+.tienda--cta { background: var(--oro); color: var(--vino-profundo); justify-content: center; text-align: center; align-items: center; padding: 1.6rem; gap: .75rem; border-color: var(--oro); }
 .tienda--cta p { color: #3a3226; }
-.tienda--cta .btn { align-self: center; margin-top: .6rem; background: var(--pizarra); color: var(--crema); border-color: var(--pizarra); }
+.tienda--cta .btn { align-self: center; margin-top: .6rem; background: var(--vino-profundo); color: var(--crema); border-color: var(--vino-profundo); }
 .vacio { grid-column: 1 / -1; text-align: center; padding: 3rem 1rem; border: 3px dashed var(--line-soft); border-radius: 4px; }
 .vacio h3 { margin-bottom: .5rem; }
 .contador { font-family: var(--f-etiqueta); letter-spacing: .12em; text-transform: uppercase; color: var(--ink-soft); margin-bottom: 1.2rem; }
 
 /* ---------- Footer ---------- */
-.pie { background: var(--pizarra); color: var(--crema); padding-top: clamp(3.5rem, 7vw, 5.5rem); border-top: 6px solid var(--naranja); }
+.pie { background: var(--vino-profundo); color: var(--crema); padding-top: clamp(3.5rem, 7vw, 5.5rem); border-top: 6px solid var(--naranja); }
 .pie__grid { display: grid; grid-template-columns: 1.3fr 1fr 1fr; gap: 2.5rem; padding-bottom: 3rem; }
 .pie__marca img { width: 9.5rem; margin-bottom: 1.2rem; }
 .pie__marca p { color: var(--crema-suave); max-width: 22rem; }

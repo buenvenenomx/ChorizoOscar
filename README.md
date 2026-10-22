@@ -12,7 +12,7 @@ Sitio estático (HTML + CSS + JS plano, sin build ni dependencias) de Oscar's Ch
 | `css/styles.css` | Sistema visual; los tokens viven en `:root` |
 | `js/datos.js` | **Contenido editable**: tiendas, presentaciones, contacto, redes |
 | `js/main.js` | Menú móvil, render de productos y tiendas, filtros, revelado al scroll |
-| `assets/brand/svg/` | Logo vectorial: `logo-oro` (principal), `logo-crema`, `logo-pizarra`, `logo-rojo` (secundario), `logo` (`currentColor`) |
+| `assets/brand/svg/` | Logo vectorial: `logo-oro` (principal), `logo-crema`, `logo-vino`, `logo-rojo` (secundario), `logo` (`currentColor`) |
 | `assets/brand/png/` | El mismo logo en PNG (512, 1024, 2000 px) |
 | `assets/brand/` | Favicon, icono de app e imagen para compartir (`og-image.jpg`) |
 | `assets/img/` | Fotografía real del producto y de las tiendas (WebP optimizado) |
