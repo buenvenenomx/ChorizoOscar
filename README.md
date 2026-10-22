@@ -41,3 +41,13 @@ npx http-server . -p 4173
 ## Precios
 
 No se publican precios en el sitio. El distribuidor compra a un precio menor para dejarle margen, y la venta directa al público cambia según la ciudad (más alta en Chihuahua capital que en Cárdenas o Meoqui). Cada presentación lleva a WhatsApp con un mensaje que pregunta la ciudad, y el precio se cotiza ahí.
+
+## Dominio
+
+El sitio se publica con GitHub Pages en **https://oscarschorizo.buenveneno.mx**, igual que Arisco.
+
+- `CNAME` contiene el dominio. No lo borres: GitHub lo usa para servir el sitio ahí.
+- DNS (Porkbun, zona `buenveneno.mx`): registro **CNAME**, host `oscarschorizo`, valor `buenvenenomx.github.io`.
+- GitHub: Settings → Pages → Custom domain `oscarschorizo.buenveneno.mx` y activar **Enforce HTTPS** cuando el certificado esté listo.
+- `canonical`, `og:url`, `og:image`, `robots.txt` y `sitemap.xml` usan ese dominio. Si cambia, hay que actualizarlos.
+- Al subir cambios de CSS o JS, sube también el número `?v=` de los enlaces en `index.html` y `tiendas.html` para saltarse el caché de Pages.

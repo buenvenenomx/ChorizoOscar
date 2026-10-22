@@ -1,0 +1,14 @@
+{
+  "name": "Oscar's Chorizo",
+  "short_name": "Oscar's Chorizo",
+  "description": "Chorizo norteño artesanal. La calidad es nuestra receta.",
+  "lang": "es-MX",
+  "start_url": "/",
+  "display": "browser",
+  "theme_color": "#261517",
+  "background_color": "#261517",
+  "icons": [
+    { "src": "assets/brand/icon-512.png", "sizes": "512x512", "type": "image/png" },
+    { "src": "assets/brand/apple-touch-icon.png", "sizes": "180x180", "type": "image/png" }
+  ]
+}
