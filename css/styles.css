@@ -141,7 +141,8 @@ em { font-style: normal; color: var(--accent-text); }
 .nav__marca { display: flex; align-items: center; gap: .75rem; text-decoration: none; color: var(--crema); }
 .nav__marca img { width: 3.4rem; height: 3.4rem; }
 .nav__marca span { font-family: var(--f-display); font-size: 1.25rem; line-height: 1; }
-.nav__links { display: flex; align-items: center; gap: 2rem; list-style: none; margin: 0; padding: 0; }
+.nav__links { display: flex; align-items: center; gap: 2rem; list-style: none; margin: 0; padding: 0; white-space: nowrap; }
+.nav__marca span { white-space: nowrap; }
 .nav__links a:not(.btn) {
   font-family: var(--f-etiqueta); font-weight: 600; text-transform: uppercase; letter-spacing: .14em;
   font-size: 1rem; text-decoration: none; padding-block: .4rem; border-bottom: 2px solid transparent; color: var(--crema);
@@ -158,7 +159,7 @@ em { font-style: normal; color: var(--accent-text); }
 .nav__toggle[aria-expanded="true"] .barras { display: none; }
 .nav__toggle[aria-expanded="true"] .x { display: block; }
 
-@media (max-width: 52rem) {
+@media (max-width: 62rem) {
   .nav__toggle { display: inline-flex; }
   .nav__links {
     position: absolute; left: 0; right: 0; top: 100%;
@@ -327,3 +328,13 @@ em { font-style: normal; color: var(--accent-text); }
   .js .rev { opacity: 1; transform: none; transition: none; }
   .btn { transition: none; }
 }
+
+/* Firma de Buenveneno (mismo estilo que en Arisco) */
+.pie .creditos-bv {
+  font-family: "Inter", system-ui, sans-serif;
+  font-weight: 900; letter-spacing: -.03em; text-transform: uppercase; text-decoration: none; color: var(--crema);
+  border-bottom: 1px solid transparent;
+  transition: border-color .2s ease;
+}
+.pie .creditos-bv span { font-weight: 300; font-style: italic; }
+.pie .creditos-bv:hover { color: var(--crema); text-decoration: none; border-color: var(--crema); }

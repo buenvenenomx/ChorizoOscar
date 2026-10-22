@@ -1,6 +1,6 @@
 # Oscar's Chorizo
 
-Sitio estático (HTML + CSS + JS plano, sin build ni dependencias) de Oscar's Chorizo, chorizo norteño artesanal de Meoqui, Chihuahua.
+Sitio estático (HTML + CSS + JS plano, sin build ni dependencias) de Oscar's Chorizo, chorizo norteño artesanal de Cárdenas, Chihuahua.
 
 **Guía de marca:** https://claude.ai/artifact/Suywat4MXURY8r7sSgjiva (privado; paleta medida del empaque real, componentes con vista previa, logos, fotografía y reglas de uso).
 
